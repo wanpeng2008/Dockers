@@ -6,6 +6,6 @@ RUN yum-config-manager --add-repo https://openresty.org/package/centos/openresty
     && /bin/cp -rf /usr/local/openresty/lualib/ngx/* /ABTestingGateway/lib/lua-resty-core/lib/ngx/ \
     && /bin/cp -rf /usr/local/openresty/lualib/resty/* /ABTestingGateway/lib/lua-resty-core/lib/resty/ \
     && yum clean all \
-    && rm -rf /var/cache/yum
+    && rm -rf /var/cache/yum \
     && mkdir /ABTestingGateway/utils/logs
 ENTRYPOINT [ "/usr/bin/redis-server", "/ABTestingGateway/utils/conf/redis.conf" ]
